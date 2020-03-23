@@ -20,22 +20,16 @@ data, labels = shuffle(data, labels)
 
 # Training the perceptron
 perceptron.train(data, labels)
-for point in data_class_2:
-    if perceptron.predict(point) == 0:
-        print("Wrong")
-for point in data_class_1:
-    if perceptron.predict(point) == 1:
-        print("Wrong")
 
+# Getting the decision boundary plane
 normal = perceptron.w[1:]
 b = perceptron.w[0]
-
-
 x = np.arange(-3, 3, 0.1)
 y = np.arange(-3, 3, 0.1)
 X, Y = np.meshgrid(x, y)
-
 Z = (b-normal[0]*X-normal[1]*Y)/normal[2]
+
+# Plotting the data and the decision boundary plane
 plt3d = plt.figure().gca(projection='3d')
 plt3d.plot_surface(X, Y, Z, alpha=1)
 plt3d.scatter(data_class_1[:, 0], data_class_1[:, 1], data_class_1[:, 2],color='orange', label='Class 1')
