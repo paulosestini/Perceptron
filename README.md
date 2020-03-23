@@ -1,5 +1,5 @@
 # Perceptron
-A simple Rosenblatt's Perceptron implementation
+A Rosenblatt's Perceptron implementation
 
 # 2D Example
 ![Decision boundary 2D](https://i.ibb.co/Hr0ktN3/Figure-1.png)
